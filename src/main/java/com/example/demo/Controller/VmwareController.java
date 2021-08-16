@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 @RestController
@@ -41,8 +42,16 @@ public class VmwareController {
         repo.save(result);
     }
     @GetMapping("/{task_id}")
-    private String TaskId(
+    private Double TaskId(
         @PathVariable("task_id") Integer id){
+        Iterable<Map<String,Double>> m;
+        m=repo.findAll();
+        while(m.iterator().hasNext()){
+            Map<String,Double> x=m.iterator().next();
+            if(x.containsKey(Integer.toString(id))){
+                return x.get(Integer.toString(id));
+            }
+        }
         return null;
     }
 }
