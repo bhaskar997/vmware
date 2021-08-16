@@ -1,7 +1,10 @@
 package com.example.demo.Models;
 
-import java.util.Map;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.util.Map;
+@Getter@Setter
 public class BodyModel {
-    Map<String,Map<String,Object>> map;
+    Map<String,Shape> map;
 }
