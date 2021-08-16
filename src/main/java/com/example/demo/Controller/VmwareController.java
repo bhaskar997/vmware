@@ -38,4 +38,9 @@ public class VmwareController {
         }
         return result;
     }
+    @GetMapping("/{task_id}")
+    private String TaskId(
+        @PathVariable("task_id") Integer id){
+
+    }
 }
