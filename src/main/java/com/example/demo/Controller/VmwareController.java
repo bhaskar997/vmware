@@ -2,10 +2,7 @@ package com.example.demo.Controller;
 
 import com.example.demo.Models.BodyModel;
 import com.example.demo.Models.Shape;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
@@ -14,7 +11,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/results")
 public class VmwareController {
-    @GetMapping(value = "{id}")
+    @PostMapping("/add")
     private Map<String,Double> TaskId(
             HttpServletRequest httpServletRequest,
             @RequestBody BodyModel bodyModel){
